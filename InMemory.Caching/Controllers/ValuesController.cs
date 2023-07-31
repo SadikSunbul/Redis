@@ -36,6 +36,7 @@ namespace InMemory.Caching.Controllers
         [HttpGet("set")]
         public void Setdata()
         {
+            
             memoryCache.Set<DateTime>("date", DateTime.Now,
                 options: new()
                 {
@@ -43,6 +44,7 @@ namespace InMemory.Caching.Controllers
                     //DateTime.Now.AddSeconds(60) bir C# programında, şu anki zamanı alır ve üzerine 60 saniye ekler.
                     SlidingExpiration = TimeSpan.FromSeconds(10), //10 sn yı asarsan yine veriyi sil
                     //TimeSpan.FromSeconds(10) C# programında, 10 saniyelik bir zaman aralığını temsil eden TimeSpan nesnesini oluşturur.
+
                 });
         }
         [HttpGet("get")]
