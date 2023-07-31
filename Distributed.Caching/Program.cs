@@ -7,6 +7,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddStackExchangeRedisCache(opt=>opt.Configuration="localhost:1452");
+//dockera kurarken yazdýgýmýz port
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
